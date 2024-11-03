@@ -38,18 +38,26 @@
             </ul>
         </div>
 
-        <!-- Navbar -->
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
               <a class="navbar-brand" href="#">
                 <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                Bootstrap
+                Sistema Finanzas para Pymes
               </a>
+              <div class="dropdown ms-auto">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                  Usuario
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                  <li><a class="dropdown-item" href="#">Ver perfil</a></li>
+                  <li><a class="dropdown-item" href="{% url 'logout' %}">Cerrar sesión</a></li>
+                </ul>
+              </div>
             </div>
           </nav>
 
         <!-- Contenido principal -->
-
+          <div>Bienvenido {{ user.username }}</div>
         
 
         <div id="tabla-container" style="display:none;">

@@ -18,7 +18,7 @@ class PrincipalView(TemplateView):
         context['proveedor_form'] = formularioProveedor()
         return context
 
-    
+
 
 def renderInicio(request):
     proveedores = Proveedor.objects.all()    
