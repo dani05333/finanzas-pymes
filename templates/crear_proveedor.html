@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Crear Proveedor</h4>
+    <form method="POST" action="{% url 'crear_proveedor' %}" class="form-control">
+        {% csrf_token %}
+        {{proveedor_form.as_p}}
+        <button type="submit" class="btn btn-primary">Crear</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,36 @@
+.container-grid {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "sidebar navbar"
+        "sidebar main";
+    height: 100vh;
+}
+
+/* Estilos para el sidebar */
+#sidebar {
+    grid-area: sidebar;
+    background-color: white;
+    color: #343a40;
+    padding-top: 20px;
+}
+
+#sidebar .nav-link {
+    color: #343a40;
+}
+#sidebar .nav-link:hover {
+    background-color: white;
+}
+
+/* Estilos para el navbar */
+#navbar {
+    grid-area: navbar;
+}
+
+/* Estilos para el contenido principal */
+#main-content {
+    grid-area: main;
+    padding: 20px;
+}
+

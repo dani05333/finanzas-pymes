@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h4>Detalles de Proveedores</h4>
+    
+    {%if proveedores %}
+    <table class="table table-striped table-bordered">
+        <thead>
+            <th scope="col">Id Proveedor</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Eliminar</th>
+            
+            
+            
+
+        </thead>
+        <tbody>
+            {%for x in proveedores%}
+            <tr>
+                <td scope="row">{{x.id}}</td>
+                <td>{{x.nombreProveedor}}</td>
+                <td>{{x.direccionProveedor}}</td>
+                <td>{{x.telefonoProveedor}}</td>
+                <td>
+                    <a href="{% url 'editar_proveedor' x.id %}">Editar</a>
+                </td>
+                <td>
+                    <a href="{% url 'eliminar_proveedor' x.id %}">Eliminar</a>
+                </td>
+                
+                
+                
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+    {% else %}
+    <div>TABLA VACIA</div>
+    {% endif %}
+
+
+
+
+</body>
+</html>
+

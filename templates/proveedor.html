@@ -1,0 +1,25 @@
+{% extends 'inicio.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    {% if form.errors %}
+        <div>MENSAJE ERROR</div>
+    {% endif %}
+
+    <h1>REGISTRO DE PROVEEDORES</h1>
+
+    <form action = "{% url 'guardarProveedor' %}" method="POST">
+
+        {% csrf_token %}
+        {% if mensaje %}
+            <div>PROVEEDOR REGISTRADO EXITOSAMENTE</div>
+        {% endif %}
+
+        {{ form|crispy}}
+
+        <button type="button">Guardar</button>
+
+    </form>
+
+{% endblock %}
